@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="park.jpg" alt="Logo" width="100"/>
+  
+![Logo](park.png)
+
 </p>
 
 # EcoAlt: Modelagem de Altitude de Fungos Nativos
