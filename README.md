@@ -1,6 +1,6 @@
 <p align="center">
   
-![Logo](park.png)
+![Logo](imagens/park.png)
 
 </p>
 
