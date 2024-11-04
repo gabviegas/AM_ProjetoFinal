@@ -32,7 +32,6 @@ Para a implantação desse projeto foi utilizada a interface do Jupyter Notebook
 
 As seguintes ferramentas foram utilizadas para a elaboração do projeto:
 
-* Jupyter Notebook 
-* Visual Studio Code  
+* K-NN Vizinhos
 
 ## Referências
