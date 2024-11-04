@@ -32,6 +32,6 @@ Para a implantação desse projeto foi utilizada a interface do Jupyter Notebook
 
 As seguintes ferramentas foram utilizadas para a elaboração do projeto:
 
-* K-NN Vizinhos
+* K-NN Vizinhos O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo x, o algoritmo checa 
 
 ## Referências
