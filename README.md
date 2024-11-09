@@ -66,7 +66,8 @@ O Teorema de Bayes descreve a probabilidade de ocorrência de um evento A ocorre
 
 Foi mencionado que Naive Bayes é um conjunto de algoritmos porbabilísticos.
 
-### Baseline: Também conhecido como: dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, a linha de base pode ser vista como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que sempre prevê a média (para problemas de regressão) ou a classe mais frequente (para problemas de classificação). 
+### Baseline:
+Também conhecido como: dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, a linha de base pode ser vista como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que sempre prevê a média (para problemas de regressão) ou a classe mais frequente (para problemas de classificação). 
 
 ## Referências
 CASSAR, Daniel. "ATP-203 2.1- Aprendizado de máquina, k-NN e métricas.ipynb" [Material de sala de aula]. Aprendizado de Máquina, 07 de agosto de 2024, Ilum - Escola de Ciência.
