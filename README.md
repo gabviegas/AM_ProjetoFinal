@@ -33,13 +33,40 @@ Para a implantação desse projeto foi utilizada a interface do Jupyter Notebook
 
 As seguintes ferramentas foram utilizadas para a elaboração do projeto:
 
-* K-NN Vizinhos: O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo x, o algoritmo checa a distância deste exemplo  com relação aos exemplos que ele ja conhece(vizinhos). O valor predito pelo modelo será a média dos alvos dos k vizinhos mais próximos do exemplo de entrada( k vizinhos com menor distância).[1].
-* Floresta aleatória: Combina funções de predição aproximadamente não viesadas fazendo uma classificação, treinado com covariáveis dadas pelas predições dos modelos a serem combinados. É formada por diversas árvores de decisão onde o processo de construir cada das árvores de decisão desta floresta envolve amostragem dos exemplos e de atributos.[2].
-* Optuna: É um módulo para resolver problemas envolvendo otimização com parâmetros numéricos e categóricos que proprociona buscas mais estratégico do que a busca aleatória e mais eficiente de que a busca em grade. Pontanto, é uma estrutura de software de otimização automática de hiperparâmetros de um modelo de aprendizado de máquina que também se integra ao  acompanhamento e monitoramento de modelo e avaliação.
-* Métricas de classificação: Este módulo oferece várias funções  para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro.
-* Recall: É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente idendtificados. Sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas, é muito útil em situações em que a deteção de casos positivos é crucial e a ocorrência de falsos negativos é indejada.
-* Naive Bayes: É um classificador probalístico onde assume que as características(feature) são idependentes entre si, por isso o termo "naive" (ingênuo), sendo uma simplicação feita para facilitar o cálculo das probabilidades condicionais necessárias para a classificação.
-* Baseline: 
+### K-NN Vizinhos: 
+O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo x, o algoritmo checa a distância deste exemplo  com relação aos exemplos que ele ja conhece(vizinhos). O valor predito pelo modelo será a média dos alvos dos k vizinhos mais próximos do exemplo de entrada( k vizinhos com menor distância).[1].
+
+### Floresta aleatória: 
+Combina funções de predição aproximadamente não viesadas fazendo uma classificação, treinado com covariáveis dadas pelas predições dos modelos a serem combinados. É formada por diversas árvores de decisão onde o processo de construir cada das árvores de decisão desta floresta envolve amostragem dos exemplos e de atributos.[2].
+
+### Optuna:
+É um módulo para resolver problemas envolvendo otimização com parâmetros numéricos e categóricos que proprociona buscas mais estratégico do que a busca aleatória e mais eficiente de que a busca em grade. Pontanto, é uma estrutura de software de otimização automática de hiperparâmetros de um modelo de aprendizado de máquina que também se integra ao  acompanhamento e monitoramento de modelo e avaliação.
+
+### Métricas de classificação:
+Este módulo oferece várias funções  para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro.
+
+### Recall:
+É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente idendtificados. Sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas, é muito útil em situações em que a deteção de casos positivos é crucial e a ocorrência de falsos negativos é indejada.
+
+### Naive Bayes:
+Os classificadores Naive Bayes são um conjunto de algoritmos probabilísticos que realizam predições com base no Teorema de Bayes. São chamados "naive" (ingênuo) porque assumem uma relação de independência condicional entre as features que analisa.
+
+$$
+P(A | B) = \frac{P(A) P(B | A)}{P(B)}.
+$$
+
+O Teorema de Bayes descreve a probabilidade de ocorrência de um evento A ocorrer sabendo que um evento B ocorreu. É uma ferramenta extremamente poderosa, que proporciona a possibilidade de atualizar uma probabilidade inicial matematicamente, tendo aplicações extremamante difundidas em diversas áreas, como aprendizado de máquina, saúde, ou mesmo a vida cotidiana. Para a equação acima, temos os termos:
+
+* $P(A|B):$ probabilidade de A sabendo que B ocorreu.
+* $P(B|A):$ probabilidade de B sabendo que A ocorreu.
+* $P(A):$ probabilidade inicial de A, o que se sabia de A antes de B ocorrer.
+* $P(B):$ é a probabilidade total de B.
+
+#### Aplicação ao contexto
+
+Foi mencionado que Naive Bayes é um conjunto de algoritmos porbabilísticos.
+
+### Baseline: 
 
 ## Referências
 CASSAR, Daniel. "ATP-203 2.1- Aprendizado de máquina, k-NN e métricas.ipynb" [Material de sala de aula]. Aprendizado de Máquina, 07 de agosto de 2024, Ilum - Escola de Ciência.
