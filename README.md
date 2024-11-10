@@ -6,12 +6,29 @@ A proposta do projeto é elaborar um modelo preditivo com dados sobre espécies 
 
 ## Começando
 
-O projeto visa aplicar técnicas de aprendizado de máquina para prever a ordem de uma espécie de fungo nativa do Brasil com base em sua localização. Baseando-se em características como municipality, família, longitude mínima e latitude mínima observadas, o modelo busca identificar padrões ecológicos e geográficos que influenciam a distribuição das ordens desses fungos. 
+O projeto visa aplicar técnicas de aprendizado de máquina para prever a ordem de uma espécie de fungo nativa do Brasil com base em sua localização. Baseando-se em características como municipality, família, longitude mínima e latitude mínima observadas, o modelo busca identificar padrões ecológicos e geográficos que influenciam a distribuição das ordens desses fungos.
 
+As definições de features e target foram feitas da seguinte forma:
+
+*Atributos categóricos:*<br>
+
+- `municipality`: município que o fungo foi encontrado.
+
+*Atributos numéricos:*<br>
+
+- `decimalLatitude`: latitude que o fungo foi encontrado em decimais.
+- `decimalLongitude`: longitude que o fungo foi encontrado em decimais.
+- `meanElevationInMeters`: média das colunas originais `minimumElevationInMeters` e `maximumElevationInMeters`, que nos dirá a altura média que o fungo pode ser encontrado.
+
+*Target*:
+- `family`: família a que o fungo pertence
+
+O conjunto de dados escolhido é referente à Coleção de Fungos do Herbário SP, que possui cerca de 45 mil de exemplares de fungos pertencentes ao grupo dos basidiomicetos e fungos liquenizados do estado de São Paulo.
+No dataset original, havia uma série de fatores que poderiam atrapalhar a indução de modelos de machine learning, como valores ´NaN´ (Not A Number), classes do target com poucas observações e feature categórica (municipality). Portanto, foram realizados processos de pré-processamento dos dados antes da indução dos modelos de fato.
 
 ## 🔨 Etapas do projeto
 
-- [ ] Acesso e tratamento de dados.
+- [ ] Acesso e pré-processing de dados.
 - [ ] Realizar splitting dos dados e testes.
 - [ ] Otimização com Optuna.
 - [ ] Modelo Baseline Classificador.
@@ -28,6 +45,10 @@ Para a implantação desse projeto foi utilizada a interface do Jupyter Notebook
 ## 🛠️ Construído com
 
 As seguintes ferramentas foram utilizadas para a elaboração do projeto:
+
+### Estratégia de Holdout:
+
+A estratégia de Holdout implica em 
 
 ### Optuna:
 É um módulo para resolver problemas envolvendo otimização com parâmetros numéricos e categóricos que proprociona buscas mais estratégico do que a busca aleatória e mais eficiente de que a busca em grade. Pontanto, é uma estrutura de software de otimização automática de hiperparâmetros de um modelo de aprendizado de máquina que também se integra ao  acompanhamento e monitoramento de modelo e avaliação.
