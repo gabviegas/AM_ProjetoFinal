@@ -12,18 +12,19 @@ A proposta do projeto é elaborar um modelo preditivo com dados sobre espécies 
 
 O projeto visa aplicar técnicas de aprendizado de máquina para prever a ordem de uma espécie de fungo nativa do Brasil com base em sua localização. Baseando-se em características como municipality, família, longitude mínima e latitude mínima observadas, o modelo busca identificar padrões ecológicos e geográficos que influenciam a distribuição das ordens desses fungos.
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto. 
+
 
 ## 🔨 Etapas do projeto
 
 - [ ] Acesso e tratamento de dados.
-- [ ] Seleção de atributos.
-- [ ] Elaborar um modelo de base para analisar as relações entre as variáveis analisadas.
-- [ ] Desenvolver uma matriz de confusão. |verificar a aplicabilidade|
 - [ ] Realizar splitting dos dados e testes.
+- [ ] Otimização com Optuna.
+- [ ] Modelo Baseline Classificador.
+- [ ] Matriz de confusão.
+- [ ] Implementar K-NN vizinhos.
 - [ ] Implementar floresta aleatória.
-- [ ] Teste com K-NN vizinhos.
-- [ ] Teste com Naive Bayes/Support Vector Machine.
+- [ ] Teste com Naive Bayes.
+- [ ] Comentar resultados.
       
 ##  Implantação
 
@@ -45,7 +46,7 @@ Combina funções de predição aproximadamente não viesadas fazendo uma classi
 ### Métricas de classificação:
 Este módulo oferece várias funções  para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro.
 
-### Recall:
+* Recall:
 É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente idendtificados. Sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas, é muito útil em situações em que a deteção de casos positivos é crucial e a ocorrência de falsos negativos é indejada.
 
 ### Naive Bayes (NB):
