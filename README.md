@@ -78,7 +78,7 @@ $$
 
 Assim, a probabilidade de uma classe C ocorrer se as features $X_1, X_2, ..., X_N$ se manifestarem pode ser calculada pelo teorema. É importante lembrar que essa probabilidade é a atualização de uma probailidade inicial P(C). Como temos 4 classes, esse processo é realizado para as 4. A classe que possuir a probabilidade mais alta será a indicada como correspondente ao conjunto de features utilizadas no cálculo.
 
-Foi mencionado que Naive Bayes é um conjunto de algoritmos probabilísticos. Como opções de algoritmos para implementação dessa lógica, teríamos o ´MultinomialNB´, altamente recomendado para a classificação de textos, ´BernoulliNB´, recomendado para dados que apresentem distribuições Bernoulli multivariadas, ´CategoricalNB´ para dados distribuídos categoricamente e ´GaussianNaiveBayes´, que assume que as variáveis analisadas estão seguindo uma distribuição Gaussiana. 
+Foi mencionado que Naive Bayes é um conjunto de algoritmos probabilísticos. Como opções de algoritmos para implementação dessa lógica, teríamos o `MultinomialNB`, altamente recomendado para a classificação de textos, `BernoulliNB`, recomendado para dados que apresentem distribuições Bernoulli multivariadas, `CategoricalNB` para dados distribuídos categoricamente e `GaussianNaiveBayes`, que assume que as variáveis analisadas estão seguindo uma distribuição Gaussiana. 
 Os algoritmos que serão implementados nesse projeto serão os de Gaussian Naive Bayes e Complementar Naive Bayes (uma adaptação para conjunto de dados desbalanceados). 
 
 ### Baseline:
