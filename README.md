@@ -70,11 +70,11 @@ Obs.: Devido ao target ter quatro classes, será preciso implementar uma matriz 
 
 ### K-NN Vizinhos: 
 
-O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo x, o algoritmo checa a distância deste exemplo  com relação aos exemplos que ele ja conhece(vizinhos). O valor predito pelo modelo será a média dos alvos dos k vizinhos mais próximos do exemplo de entrada( k vizinhos com menor distância).[1].
+O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo x, o algoritmo checa a distância deste exemplo  com relação aos exemplos que ele ja conhece(vizinhos). O valor predito pelo modelo será a média dos alvos dos k vizinhos mais próximos do exemplo de entrada( k vizinhos com menor distância).
 
 ### Floresta aleatória: 
 
-Combina funções de predição aproximadamente não viesadas fazendo uma classificação, treinado com covariáveis dadas pelas predições dos modelos a serem combinados. É formada por diversas árvores de decisão onde o processo de construir cada das árvores de decisão desta floresta envolve amostragem dos exemplos e de atributos.[2].
+Combina funções de predição aproximadamente não viesadas fazendo uma classificação, treinado com covariáveis dadas pelas predições dos modelos a serem combinados. É formada por diversas árvores de decisão onde o processo de construir cada das árvores de decisão desta floresta envolve amostragem dos exemplos e de atributos.
 
 ### Métricas de classificação:
 
@@ -127,6 +127,11 @@ Os algoritmos que serão implementados nesse projeto serão os de Gaussian Naive
 
 ## Referências
 
-CASSAR, Daniel. "ATP-203 2.1- Aprendizado de máquina, k-NN e métricas.ipynb" [Material de sala de aula]. Aprendizado de Máquina, 07 de agosto de 2024, Ilum - Escola de Ciência.
+[1]	Optuna - A hyperparameter optimization framework [Internet]. Optuna. Available from: https://optuna.org/
+[2]	CASSAR, Daniel. "ATP-203 3.0 –  Modelo linear e baseline.ipynb"  [Material de sala de aula]. Aprendizado de Máquina, 04 de julho de 2024, Ilum - Escola de Ciência
+[3] Escola DNC. Métricas de Avaliação de Modelos de Classificação em Machine Learning - Blog DNC [Internet]. Blog DNC. 2024 [cited 2024 Nov 10]. Available from: https://www.escoladnc.com.br/blog/metricas-de-avaliacao-de-modelos-de-classificacao-em-machine-learning/.
+[4] CASSAR, Daniel. "ATP-203 2.1- Aprendizado de máquina, k-NN e métricas.ipynb" [Material de sala de aula]. Aprendizado de Máquina, 07 de agosto de 2024, Ilum - Escola de Ciência.
+[5]	IZBICKI, Rafael; DOS SANTOS, Tiago Mendonça. Aprendizado de máquina: uma abordagem estatística. 2020. Disponível em: http://www.rizbicki.ufscar.br/ame/.
+[6]	CASSAR, Daniel. "ATP-203 10.0 – Outras métricas de classificação.ipynb"  [Material de sala de aula]. Aprendizado de Máquina, 27 de outubro de 2024, Ilum - Escola de Ciência
+[7]	Nunes C. O algoritmo Naive Bayes — descrição e implementação em Python [Internet]. Medium. 2023 [cited 2024 Nov 10]. Available from: https://joaoclaudionc.medium.com/o-algoritmo-naive-bayes-descri%C3%A7%C3%A3o-e-implementa%C3%A7%C3%A3o-em-python-35757ade6b36
 
-IZBICKI, Rafael; DOS SANTOS, Tiago Mendonça. Aprendizado de máquina: uma abordagem estatística. 2020. Disponível em: http://www.rizbicki.ufscar.br/ame/.
