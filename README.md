@@ -25,7 +25,7 @@ As definições de features e target foram feitas da seguinte forma:
 
 O conjunto de dados escolhido é referente à Coleção de Fungos do Herbário SP, que possui cerca de 45 mil de exemplares de fungos pertencentes ao grupo dos basidiomicetos e fungos liquenizados do estado de São Paulo.
 No dataset original, havia uma série de fatores que poderiam atrapalhar a indução de modelos de machine learning, como valores ´NaN´ (Not A Number), classes do target com poucas observações e feature categórica (municipality). Portanto, foram realizados processos de pré-processamento dos dados antes da indução dos modelos de fato.
-* Para lidar com os valores `Nan`, foi utilizado o método `dropna()` do pandas. Ele remove as linhas com esse tipo de informação;
+* Para lidar com os valores `NaN`, foi utilizado o método `dropna()` do pandas. Ele remove as linhas com esse tipo de informação;
 * Quanto às classes do target, foi criada uma variável denominada `logic`, que armazena as classes cuja quantidade de observações é superior a 100 (Os resultados obtidos podem ser verificados no código correspondente). 
 * Por fim, foi realizado o processo de encoding (codificação) da feature categórica com o `One-Hot Encoder`, uma vez que municípios não são variáveis ordinais.
 
@@ -41,9 +41,9 @@ No dataset original, havia uma série de fatores que poderiam atrapalhar a indu�
 - [ ] Implementação de floresta aleatória.
 - [ ] Teste com Naive Bayes.
       
-##  Implantação
+##  Implementação
 
-Para a implantação desse projeto foi utilizada a interface do Jupyter Notebook para elaborar o código fonte, em conjunto com as ferramentas pandas, matplolib, numpy, seaborn, sklearn para carregamento, tratamento e exibição dos dados utilizados no projeto. 
+Para a implementação desse projeto foi utilizada a interface do Jupyter Notebook para elaborar o código fonte, utilizando as bibliotecas `pandas`, `matplotlib`, `numpy`, `seaborn`, `sklearn` para carregamento, tratamento e exibição dos dados utilizados no projeto. 
 
 ## 🛠️ Construído com
 
@@ -51,7 +51,7 @@ As seguintes ferramentas foram utilizadas para a elaboração do projeto:
 
 ### Estratégia de Holdout:
 
-Também conhecida como _train test split_ ou _divisão em treino e teste_, tem como função dividir as variáveis utilizadas para a implementação do modelo em unidades de treino e teste, de forma que o modelo tenha features suficientes para ser treinado, mas que ainda tenha dados que desconhece, para então averiguarmos a acurácia do modelo com dados desconhecidos.
+Também conhecida como `train test split` ou _divisão em treino e teste_, tem como função dividir as variáveis utilizadas para a implementação do modelo em unidades de treino e teste, de forma que o modelo tenha features suficientes para ser treinado, mas que ainda tenha dados que desconhece, para então averiguarmos a acurácia do modelo com dados desconhecidos.
 
 ### Optuna:
 
