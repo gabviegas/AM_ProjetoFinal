@@ -61,9 +61,15 @@ Também conhecida como _train test split_ ou _divisão em treino e teste_, tem c
 
 ### Baseline:
 
-Também conhecido como Dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, o baseline pode ser visto como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que prevê a classe mais frequente (para problemas de classificação). 
+Também conhecido como Dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, o baseline pode ser visto como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que prevê a classe mais frequente (para problemas de classificação).
+
+### Matriz de confusão:
+
+É uma das métricas mais intuitivas e fáceis de interpretar para avaliar modelos de classificação. Ela categoriza as previsões de um modelo em verdadeiros positivos (VP), falsos positivos(FP), falsos negativos(FN) e verdadeiros negativos(VN).
+Obs.: Devido ao target ter quatro classes, será preciso implementar uma matriz de confusão para cada classe. 
 
 ### K-NN Vizinhos: 
+
 O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo x, o algoritmo checa a distância deste exemplo  com relação aos exemplos que ele ja conhece(vizinhos). O valor predito pelo modelo será a média dos alvos dos k vizinhos mais próximos do exemplo de entrada( k vizinhos com menor distância).[1].
 
 ### Floresta aleatória: 
@@ -72,7 +78,7 @@ Combina funções de predição aproximadamente não viesadas fazendo uma classi
 
 ### Métricas de classificação:
 
-Este módulo oferece várias funções  para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro.
+Este módulo oferece várias funções  para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro. Nesse projeto foi utilizado o método classification_report que chama as seguintes métricas:
 
 * Recall:
 É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente idendtificados. Sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas, é muito útil em situações em que a deteção de casos positivos é crucial e a ocorrência de falsos negativos é indejada.
