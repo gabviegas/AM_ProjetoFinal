@@ -26,7 +26,7 @@ As definições de features e target foram feitas da seguinte forma:
 O conjunto de dados escolhido é referente à Coleção de Fungos do Herbário SP, que possui cerca de 45 mil de exemplares de fungos pertencentes ao grupo dos basidiomicetos e fungos liquenizados do estado de São Paulo.
 No dataset original, havia uma série de fatores que poderiam atrapalhar a indução de modelos de machine learning, como valores ´NaN´ (Not A Number), classes do target com poucas observações e feature categórica (municipality). Portanto, foram realizados processos de pré-processamento dos dados antes da indução dos modelos de fato.
 * Para lidar com os valores `Nan`, foi utilizado o método `dropna()` do pandas. Ele remove as linhas com esse tipo de informação;
-* Quanto às classes do target, foi criada uma variável denominada `logic`, que armazena as classes cuja quantidade de observações é superior a 100.
+* Quanto às classes do target, foi criada uma variável denominada `logic`, que armazena as classes cuja quantidade de observações é superior a 100 (Os resultados obtidos podem ser verificados no código correspondente). 
 * Por fim, foi realizado o processo de encoding (codificação) da feature categórica com o `One-Hot Encoder`, uma vez que municípios não são variáveis ordinais.
 
   Após essas modificações, os dados tratados são adicionados a um dataset final, que será utilizado nos processos.
