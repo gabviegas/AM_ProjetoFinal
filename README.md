@@ -25,6 +25,11 @@ As definições de features e target foram feitas da seguinte forma:
 
 O conjunto de dados escolhido é referente à Coleção de Fungos do Herbário SP, que possui cerca de 45 mil de exemplares de fungos pertencentes ao grupo dos basidiomicetos e fungos liquenizados do estado de São Paulo.
 No dataset original, havia uma série de fatores que poderiam atrapalhar a indução de modelos de machine learning, como valores ´NaN´ (Not A Number), classes do target com poucas observações e feature categórica (municipality). Portanto, foram realizados processos de pré-processamento dos dados antes da indução dos modelos de fato.
+* Para lidar com os valores `Nan`, foi utilizado o método `dropna()` do pandas. Ele remove as linhas com esse tipo de informação;
+* Quanto às classes do target, foi criada uma variável denominada `logic`, que armazena as classes cuja quantidade de observações é superior a 100.
+* Por fim, foi realizado o processo de encoding (codificação) da feature categórica com o `One-Hot Encoder`, uma vez que municípios não são variáveis ordinais.
+
+  Após essas modificações, os dados tratados são adicionados a um dataset final, que será utilizado nos processos.
 
 ## 🔨 Etapas do projeto
 
@@ -48,21 +53,25 @@ As seguintes ferramentas foram utilizadas para a elaboração do projeto:
 
 ### Estratégia de Holdout:
 
-A estratégia de Holdout implica em 
+Também conhecida como _train test split_ ou _divisão em treino e teste_, tem como função dividir as variáveis utilizadas para a implementação do modelo em unidades de treino e teste, de forma que o modelo tenha features suficientes para ser treinado, mas que ainda tenha dados que desconhece, para então averiguarmos a acurácia do modelo com dados desconhecidos.
 
 ### Optuna:
+
 É um módulo para resolver problemas envolvendo otimização com parâmetros numéricos e categóricos que proprociona buscas mais estratégico do que a busca aleatória e mais eficiente de que a busca em grade. Pontanto, é uma estrutura de software de otimização automática de hiperparâmetros de um modelo de aprendizado de máquina que também se integra ao  acompanhamento e monitoramento de modelo e avaliação.
 
 ### Baseline:
-Também conhecido como Dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, o baseline pode ser visto como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que sempre prevê a média (para problemas de regressão) ou a classe mais frequente (para problemas de classificação). 
+
+Também conhecido como Dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, o baseline pode ser visto como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que prevê a classe mais frequente (para problemas de classificação). 
 
 ### K-NN Vizinhos: 
 O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo x, o algoritmo checa a distância deste exemplo  com relação aos exemplos que ele ja conhece(vizinhos). O valor predito pelo modelo será a média dos alvos dos k vizinhos mais próximos do exemplo de entrada( k vizinhos com menor distância).[1].
 
 ### Floresta aleatória: 
+
 Combina funções de predição aproximadamente não viesadas fazendo uma classificação, treinado com covariáveis dadas pelas predições dos modelos a serem combinados. É formada por diversas árvores de decisão onde o processo de construir cada das árvores de decisão desta floresta envolve amostragem dos exemplos e de atributos.[2].
 
 ### Métricas de classificação:
+
 Este módulo oferece várias funções  para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro.
 
 * Recall:
@@ -75,6 +84,7 @@ Este módulo oferece várias funções  para medir o desempenho de modelos de cl
 É uma métrica que mede a porcentagem de previões corretas em relação ao total de previsões. A precisão é calculada dividindo os verdadeiros positivos pelo somatório dos verdadeiros positivos e dos falsos positivos.
 
 ### Naive Bayes (NB):
+
 Os classificadores Naive Bayes são um conjunto de algoritmos probabilísticos que realizam predições com base no Teorema de Bayes. São chamados "naive" (ingênuo) porque assumem uma relação de independência condicional entre as features que analisa.
 
 $$
@@ -110,6 +120,7 @@ Os algoritmos que serão implementados nesse projeto serão os de Gaussian Naive
 
 
 ## Referências
+
 CASSAR, Daniel. "ATP-203 2.1- Aprendizado de máquina, k-NN e métricas.ipynb" [Material de sala de aula]. Aprendizado de Máquina, 07 de agosto de 2024, Ilum - Escola de Ciência.
 
 IZBICKI, Rafael; DOS SANTOS, Tiago Mendonça. Aprendizado de máquina: uma abordagem estatística. 2020. Disponível em: http://www.rizbicki.ufscar.br/ame/.
