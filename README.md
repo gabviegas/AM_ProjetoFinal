@@ -49,7 +49,9 @@ Este módulo oferece várias funções  para medir o desempenho de modelos de cl
 * Acurácia:
 É uma métrica fundamental que representa a porcentagem de previsões corretas feita pelo modelo. É calculada pela divisão do número de previsões corretas pelo número total de previsões realizadas pelo modelo. Uma alta acurácia indica que o modelo está fazendo previsões corretas em uma alta porcentagem de casos.
 * F1_Score:
+É uma  medida que combina a precision e o recall em uma unica métrica, sendo muito essencial para bases de dados desbalanceadas.
 * Precision:
+É uma métrica que mede a porcentagem de previões corretas em relação ao total de previsões. A precisão é calculada dividindo os verdadeiros positivos pelo somatório dos verdadeiros positivos e dos falsos positivos.
 
 ### Naive Bayes (NB):
 Os classificadores Naive Bayes são um conjunto de algoritmos probabilísticos que realizam predições com base no Teorema de Bayes. São chamados "naive" (ingênuo) porque assumem uma relação de independência condicional entre as features que analisa.
