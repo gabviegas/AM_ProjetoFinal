@@ -134,3 +134,7 @@ Os algoritmos que serão implementados nesse projeto serão os de Gaussian Naive
 
 [7]	Nunes C. O algoritmo Naive Bayes — descrição e implementação em Python [Internet]. Medium. 2023 [cited 2024 Nov 10]. Available from: https://joaoclaudionc.medium.com/o-algoritmo-naive-bayes-descri%C3%A7%C3%A3o-e-implementa%C3%A7%C3%A3o-em-python-35757ade6b36.
 
+## ✒️ Autores
+
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/172424928?v=4" width=115><br><sub>Rafael Erdmann</sub>](https://github.com/erdmann-ilum) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/172425056?v=4" width=115><br><sub>Pedro Henrique M. Bramante</sub>](https://github.com/PedroBramante) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/172425504?v=4" width=115><br><sub>Guilherme Sobreira</sub>](https://github.com/Guilherme-Sobreira) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/172425151?v=4" width=115><br><sub>Andressa Cristine</sub>](https://github.com/AndressaCoast) |
+| :---: | :---: | :---: | :---: |
