@@ -4,9 +4,9 @@
 
 </p>
 
-# EcoAlt: Modelagem de Altitude de Fungos Nativos
+# FunG: Modelagem de distribuição de famílias de Fungos
 
-A proposta do projeto é elaborar um modelo preditivo com dados sobre espécies de fungos nativos do Brasil para determinar a ordem predominante de fungos em uma determinada região. Esse tipo de análise ]pode ser útil para fins comerciais, dado que fungos apresentam uma gama de aplicações medicinais, culinárias, entre outras. Além disso, pode auxiliar em estudos de biogeografia, fornecendo insights sobre como as condições do ambiente culmina na ocorrência e predominância dessas espécies.
+A proposta do projeto é elaborar um modelo preditivo com dados sobre espécies de fungos nativos do Brasil para determinar a família predominante de fungos em uma determinada região. Esse tipo de análise ]pode ser útil para fins comerciais, dado que fungos apresentam uma gama de aplicações medicinais, culinárias, entre outras. Além disso, pode auxiliar em estudos de biogeografia, fornecendo insights sobre como as condições do ambiente culmina na ocorrência e predominância dessas espécies.
 
 ## Começando
 
@@ -27,7 +27,7 @@ Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar 
       
 ##  Implantação
 
-Para a implantação desse projeto foi utilizada a interface do Jupyter Notebook para elaborar o código fonte, em conjunto com as ferramentas pandas, matplolib, numpy e sklearn para carregamento, tratamento e exibição dos dados utilizados no projeto. 
+Para a implantação desse projeto foi utilizada a interface do Jupyter Notebook para elaborar o código fonte, em conjunto com as ferramentas pandas, matplolib, numpy, seaborn, sklearn para carregamento, tratamento e exibição dos dados utilizados no projeto. 
 
 ## 🛠️ Construído com
 
@@ -48,26 +48,41 @@ Este módulo oferece várias funções  para medir o desempenho de modelos de cl
 ### Recall:
 É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente idendtificados. Sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas, é muito útil em situações em que a deteção de casos positivos é crucial e a ocorrência de falsos negativos é indejada.
 
-### Naive Bayes:
+### Naive Bayes (NB):
 Os classificadores Naive Bayes são um conjunto de algoritmos probabilísticos que realizam predições com base no Teorema de Bayes. São chamados "naive" (ingênuo) porque assumem uma relação de independência condicional entre as features que analisa.
 
 $$
-P(A | B) = \frac{P(A) P(B | A)}{P(B)}.
+P(C | X) = \frac{P(C) P(X | C)}{P(X)}
 $$
 
-O Teorema de Bayes descreve a probabilidade de ocorrência de um evento A ocorrer sabendo que um evento B ocorreu. É uma ferramenta extremamente poderosa, que proporciona a possibilidade de atualizar uma probabilidade inicial matematicamente, tendo aplicações extremamante difundidas em diversas áreas, como aprendizado de máquina, saúde, ou mesmo a vida cotidiana. Para a equação acima, temos os termos:
+O Teorema de Bayes descreve a probabilidade de ocorrência de um evento C ocorrer sabendo que um evento X ocorreu. É uma ferramenta extremamente poderosa, que proporciona a possibilidade de atualizar uma probabilidade inicial matematicamente, tendo aplicações extremamante difundidas em diversas áreas, como aprendizado de máquina, saúde, ou mesmo a vida cotidiana. Para a equação acima, temos os termos:
 
-* $P(A|B):$ probabilidade de A sabendo que B ocorreu.
-* $P(B|A):$ probabilidade de B sabendo que A ocorreu.
-* $P(A):$ probabilidade inicial de A, o que se sabia de A antes de B ocorrer.
-* $P(B):$ é a probabilidade total de B.
+* $P(C|X):$ probabilidade de C sabendo que X ocorreu.
+* $P(X|C):$ probabilidade de X sabendo que C ocorreu.
+* $P(C):$ probabilidade inicial de C, o que se sabia de C antes de X ocorrer.
+* $P(X):$ é a probabilidade total de X.
 
 #### Aplicação ao contexto
 
-Foi mencionado que Naive Bayes é um conjunto de algoritmos porbabilísticos.
+Tomando ainda como referência a equação acima, considerando que $X = {X_1, X_2, X_3, ..., X_N}$, sendo X o conjunto das features que contribuem para os dados de treino e teste e que C representa uma classe que estamos tentando prever, o Teorema de Bayes é aplicado no NB de forma que a cada feature analisada em relação a uma classe tenha probabilidade de ocorrer independente de outra, o que resulta em:
+
+$$
+P(X|C) = P(X1|C) * P(X2|C)...P(X_N|C)
+$$
+
+Assim, a probabilidade que representa a relação da manisfetação das features dada um determinada classe pode ser representada pelo produto das probabilidades individuais de cada feature. o Teorema de Bayes aplicado ao contexto desse tipo de previsão fica:
+
+$$
+P(C | X) = \frac{P(X1|C) * P(X2|C)...P(X_N|C)}{P(X)}
+$$
+
+Assim, a probabilidade de uma classe C ocorrer se as features $X_1, X_2, ..., X_N$ se manifestarem pode ser calculada pelo teorema. É importante lembrar que essa probabilidade é a atualização de uma probailidade inicial P(C). Como temos 4 classes, esse processo é realizado para as 4. A classe que possuir a probabilidade mais alta será a indicada como correspondente ao conjunto de features utilizadas no cálculo.
+
+Foi mencionado que Naive Bayes é um conjunto de algoritmos probabilísticos. Como opções de algoritmos para implementação dessa lógica, teríamos o ´MultinomialNB´, altamente recomendado para a classificação de textos, ´BernoulliNB´, recomendado para dados que apresentem distribuições Bernoulli multivariadas, ´CategoricalNB´ para dados distribuídos categoricamente e ´GaussianNaiveBayes´, que assume que as variáveis analisadas estão seguindo uma distribuição Gaussiana. 
+Os algoritmos que serão implementados nesse projeto serão os de Gaussian Naive Bayes e Complementar Naive Bayes (uma adaptação para conjunto de dados desbalanceados). 
 
 ### Baseline:
-Também conhecido como: dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, a linha de base pode ser vista como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que sempre prevê a média (para problemas de regressão) ou a classe mais frequente (para problemas de classificação). 
+Também conhecido como Dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, o baseline pode ser visto como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que sempre prevê a média (para problemas de regressão) ou a classe mais frequente (para problemas de classificação). 
 
 ## Referências
 CASSAR, Daniel. "ATP-203 2.1- Aprendizado de máquina, k-NN e métricas.ipynb" [Material de sala de aula]. Aprendizado de Máquina, 07 de agosto de 2024, Ilum - Escola de Ciência.
