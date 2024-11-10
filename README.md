@@ -51,40 +51,40 @@ As seguintes ferramentas foram utilizadas para a elaboração do projeto:
 
 ### Estratégia de Holdout:
 
-Também conhecida como `train test split` ou _divisão em treino e teste_, tem como função dividir as variáveis utilizadas para a implementação do modelo em unidades de treino e teste, de forma que o modelo tenha features suficientes para ser treinado, mas que ainda tenha dados que desconhece, para então averiguarmos a acurácia do modelo com dados desconhecidos.
+Também conhecida como `train test split` ou _divisão em treino e teste_, tem como função dividir as variáveis utilizadas para a implementação do modelo em unidades de treino e teste, de forma que o modelo tenha _features_ suficientes para ser treinado, mas que ainda tenha dados que desconhece, para então averiguarmos a acurácia do modelo com dados desconhecidos.
 
 ### Optuna:
 
-É um módulo para resolver problemas envolvendo otimização com parâmetros numéricos e categóricos que proprociona buscas mais estratégico do que a busca aleatória e mais eficiente de que a busca em grade. Pontanto, é uma estrutura de software de otimização automática de hiperparâmetros de um modelo de aprendizado de máquina que também se integra ao  acompanhamento e monitoramento de modelo e avaliação.
+É um módulo para resolver problemas envolvendo otimização com parâmetros numéricos e categóricos que proporciona buscas mais estratégicas do que a busca aleatória e mais eficientes que a busca em grade. Pontanto, é uma estrutura de software de otimização automática de hiperparâmetros de um modelo de aprendizado de máquina que também se integra ao acompanhamento e monitoramento de modelo e avaliação.
 
 ### Baseline:
 
-Também conhecido como Dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, o baseline pode ser visto como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que prevê a classe mais frequente (para problemas de classificação).
+Também conhecido como _dummy_, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, o _baseline_ pode ser visto como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que prevê a classe mais frequente (para problemas de classificação).
 
-### K-NN Vizinhos: 
+### Classificador k-NN: 
 
-O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo x, o algoritmo checa a distância deste exemplo  com relação aos exemplos que ele ja conhece(vizinhos). O valor predito pelo modelo será a média dos alvos dos k vizinhos mais próximos do exemplo de entrada( k vizinhos com menor distância).
+O funcionamento de um modelo preditivo induzido por este algoritmo é simples: ao receber um certo exemplo "X", o algoritmo checa a distância deste exemplo com relação aos exemplos que ele já conhece (vizinhos). O valor predito pelo modelo será a média dos alvos dos k-vizinhos mais próximos do exemplo de entrada (k-vizinhos com menor distância).
 
 ### Floresta aleatória: 
 
-Combina funções de predição aproximadamente não viesadas fazendo uma classificação, treinado com covariáveis dadas pelas predições dos modelos a serem combinados. É formada por diversas árvores de decisão onde o processo de construir cada das árvores de decisão desta floresta envolve amostragem dos exemplos e de atributos.
+Combina funções de predição aproximadamente não enviesadas fazendo uma classificação. É treinada com covariáveis dadas pelas predições dos modelos a serem combinados, uma vez que é formada por diversas árvores de decisão em que o processo de construir cada das árvores de decisão desta floresta envolve amostragem dos exemplos e de atributos.
 
 ### Métricas de classificação:
 
-Este módulo oferece várias funções  para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro. Nesse projeto foi utilizado o método classification_report que chama as seguintes métricas:
+O módulo `sklearn.metrics.classification_report` oferece várias funções para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro. Dentro desse método, existem as seguintes métricas:
 
 * Recall:
-É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente identificados. Sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas, é muito útil em situações em que a deteção de casos positivos é crucial e a ocorrência de falsos negativos é indesejada.
+É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente identificados, sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas. É muito útil em situações em que a detecção de casos positivos é crucial e a ocorrência de falsos negativos é indesejada.
 * Acurácia:
 É uma métrica fundamental que representa a porcentagem de previsões corretas feita pelo modelo. É calculada pela divisão do número de previsões corretas pelo número total de previsões realizadas pelo modelo. Uma alta acurácia indica que o modelo está fazendo previsões corretas em uma alta porcentagem de casos.
-* F1_Score:
-É uma  medida que combina a precision e o recall em uma unica métrica, sendo muito essencial para bases de dados desbalanceadas.
 * Precision:
 É uma métrica que mede a porcentagem de previsões corretas em relação ao total de previsões. A precisão é calculada dividindo os verdadeiros positivos pelo somatório dos verdadeiros positivos e dos falsos positivos.
+* F1 score:
+É uma  medida que combina a precision e o recall em uma unica métrica, sendo essencial para bases de dados desbalanceadas.
 
 ### Naive Bayes (NB):
 
-Os classificadores Naive Bayes são um conjunto de algoritmos probabilísticos que realizam predições com base no Teorema de Bayes. São chamados "naive" (ingênuo) porque assumem uma relação de independência condicional entre as features que analisa.
+Os classificadores Naive Bayes são um conjunto de algoritmos probabilísticos que realizam predições com base no Teorema de Bayes. São chamados "naive" (ingênuos) porque assumem uma relação de independência condicional entre as _features_ que analisa.
 
 $$
 P(C | X) = \frac{P(C) P(X | C)}{P(X)}
@@ -99,24 +99,21 @@ O Teorema de Bayes descreve a probabilidade de ocorrência de um evento C ocorre
 
 #### Aplicação ao contexto
 
-Tomando ainda como referência a equação acima, considerando que $X = {X_1, X_2, X_3, ..., X_N}$, sendo X o conjunto das features que contribuem para os dados de treino e teste e que C representa uma classe que estamos tentando prever, o Teorema de Bayes é aplicado no NB de forma que a cada feature analisada em relação a uma classe tenha probabilidade de ocorrer independente de outra, o que resulta em:
+Tomando ainda como referência a equação acima, considerando que $X = {X_1, X_2, X_3, ..., X_N}$, sendo X o conjunto das features que contribuem para os dados de treino e teste e que C representa uma classe que estamos tentando prever, o Teorema de Bayes é aplicado no NB de forma que a cada _feature_ analisada em relação a uma classe tenha probabilidade de ocorrer independente de outra, o que resulta em:
 
 $$
 P(X|C) = P(X1|C) * P(X2|C)...P(X_N|C)
 $$
 
-Assim, a probabilidade que representa a relação da manisfetação das features dada um determinada classe pode ser representada pelo produto das probabilidades individuais de cada feature. o Teorema de Bayes aplicado ao contexto desse tipo de previsão fica:
+Assim, a probabilidade que representa a relação da manifestação das _features_ dada uma determinada classe pode ser representada pelo produto das probabilidades individuais de cada _feature_. o Teorema de Bayes aplicado ao contexto desse tipo de previsão fica:
 
 $$
 P(C | X) = \frac{P(X1|C) * P(X2|C)...P(X_N|C)}{P(X)}
 $$
 
-Assim, a probabilidade de uma classe C ocorrer se as features $X_1, X_2, ..., X_N$ se manifestarem pode ser calculada pelo teorema. É importante lembrar que essa probabilidade é a atualização de uma probailidade inicial P(C). Como temos 4 classes, esse processo é realizado para as 4. A classe que possuir a probabilidade mais alta será a indicada como correspondente ao conjunto de features utilizadas no cálculo.
+Assim, a probabilidade de uma classe C ocorrer se as features $X_1, X_2, ..., X_N$ se manifestarem pode ser calculada pelo teorema. É importante lembrar que essa probabilidade é a atualização de uma probabilidade inicial $P(C)$. Como temos 4 classes, esse processo é realizado para as 4. A classe que possuir a probabilidade mais alta será a indicada como correspondente ao conjunto de _features_ utilizadas no cálculo.
 
-Foi mencionado que Naive Bayes é um conjunto de algoritmos probabilísticos. Como opções de algoritmos para implementação dessa lógica, teríamos o `MultinomialNB`, altamente recomendado para a classificação de textos, `BernoulliNB`, recomendado para dados que apresentem distribuições Bernoulli multivariadas, `CategoricalNB` para dados distribuídos categoricamente e `GaussianNaiveBayes`, que assume que as variáveis analisadas estão seguindo uma distribuição Gaussiana. 
-Os algoritmos que serão implementados nesse projeto serão os de Gaussian Naive Bayes e Complementar Naive Bayes (uma adaptação para conjunto de dados desbalanceados). 
-
-
+Foi mencionado que Naive Bayes é um conjunto de algoritmos probabilísticos. Como opções de algoritmos para implementação dessa lógica, teríamos o `MultinomialNB`, altamente recomendado para a classificação de textos, `BernoulliNB`, recomendado para dados que apresentem distribuições Bernoulli multivariadas, `CategoricalNB` para dados distribuídos categoricamente e `GaussianNaiveBayes`, que assume que as variáveis analisadas estão seguindo uma distribuição Gaussiana. Os algoritmos que serão implementados nesse projeto serão o Gaussian Naive Bayes e o Complementar Naive Bayes (uma adaptação para conjunto de dados desbalanceados). 
 
 ## Referências
 
