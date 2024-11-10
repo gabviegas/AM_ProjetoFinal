@@ -81,13 +81,13 @@ Combina funções de predição aproximadamente não viesadas fazendo uma classi
 Este módulo oferece várias funções  para medir o desempenho de modelos de classificação, incluindo funções de perda e pontuações. Algumas métricas podem exigir estimativas de probabilidade da classe positiva, valores de confiança ou valores de decisões binárias. A maioria das implementações permite que cada amostra forneça uma contribuição ponderada à pontuação geral, por meio do parâmetro. Nesse projeto foi utilizado o método classification_report que chama as seguintes métricas:
 
 * Recall:
-É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente idendtificados. Sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas, é muito útil em situações em que a deteção de casos positivos é crucial e a ocorrência de falsos negativos é indejada.
+É uma métrica usada para medir a proporção de positivos verdadeiros que são corretamente identificados. Sendo intuitivamenete a capacidade do classificador de encontrar todas as amostras positivas, é muito útil em situações em que a deteção de casos positivos é crucial e a ocorrência de falsos negativos é indesejada.
 * Acurácia:
 É uma métrica fundamental que representa a porcentagem de previsões corretas feita pelo modelo. É calculada pela divisão do número de previsões corretas pelo número total de previsões realizadas pelo modelo. Uma alta acurácia indica que o modelo está fazendo previsões corretas em uma alta porcentagem de casos.
 * F1_Score:
 É uma  medida que combina a precision e o recall em uma unica métrica, sendo muito essencial para bases de dados desbalanceadas.
 * Precision:
-É uma métrica que mede a porcentagem de previões corretas em relação ao total de previsões. A precisão é calculada dividindo os verdadeiros positivos pelo somatório dos verdadeiros positivos e dos falsos positivos.
+É uma métrica que mede a porcentagem de previsões corretas em relação ao total de previsões. A precisão é calculada dividindo os verdadeiros positivos pelo somatório dos verdadeiros positivos e dos falsos positivos.
 
 ### Naive Bayes (NB):
 
