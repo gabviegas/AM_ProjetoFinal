@@ -6,18 +6,18 @@ A proposta do projeto é elaborar um modelo preditivo com dados sobre espécies 
 
 ## Começando
 
-O projeto visa aplicar técnicas de aprendizado de máquina para prever a ordem de uma espécie de fungo nativa do Brasil com base em sua localização. Baseando-se em características como municipality, família, longitude mínima e latitude mínima observadas, o modelo busca identificar padrões ecológicos e geográficos que influenciam a distribuição das ordens desses fungos.
+O projeto visa aplicar técnicas de aprendizado de máquina para prever a ordem de uma espécie de fungo nativa do Brasil com base em sua localização. Baseando-se em características como municipalidade, longitude, latitude e elevação média em metros observadas, o modelo busca identificar padrões ecológicos e geográficos que influenciam a distribuição das ordens desses fungos.
 
 As definições de features e target foram feitas da seguinte forma:
 
 *Atributos categóricos:*<br>
 
-- `municipality`: município que o fungo foi encontrado.
+- `municipality`: município em que o fungo foi encontrado.
 
 *Atributos numéricos:*<br>
 
-- `decimalLatitude`: latitude que o fungo foi encontrado em decimais.
-- `decimalLongitude`: longitude que o fungo foi encontrado em decimais.
+- `decimalLatitude`: latitude em que o fungo foi encontrado em decimais.
+- `decimalLongitude`: longitude em que o fungo foi encontrado em decimais.
 - `meanElevationInMeters`: média das colunas originais `minimumElevationInMeters` e `maximumElevationInMeters`, que nos dirá a altura média que o fungo pode ser encontrado.
 
 *Target*:
@@ -35,13 +35,11 @@ No dataset original, havia uma série de fatores que poderiam atrapalhar a indu�
 
 - [ ] Acesso e pré-processing de dados.
 - [ ] Realizar splitting dos dados e testes.
-- [ ] Otimização com Optuna.
 - [ ] Modelo Baseline Classificador.
-- [ ] Matriz de confusão.
-- [ ] Implementar K-NN vizinhos.
-- [ ] Implementar floresta aleatória.
+- [ ] Otimização com Optuna.
+- [ ] Implementação de K-NN vizinhos.
+- [ ] Implementação de floresta aleatória.
 - [ ] Teste com Naive Bayes.
-- [ ] Comentar resultados.
       
 ##  Implantação
 
@@ -62,11 +60,6 @@ Também conhecida como _train test split_ ou _divisão em treino e teste_, tem c
 ### Baseline:
 
 Também conhecido como Dummy, linha de base ou modelo fictício. No contexto de ciência de dados e aprendizado de máquina, o baseline pode ser visto como uma solução de referência que define um ponto de partida. Ele foi projetado para ser simples e de fácil implementação, como um modelo que prevê a classe mais frequente (para problemas de classificação).
-
-### Matriz de confusão:
-
-É uma das métricas mais intuitivas e fáceis de interpretar para avaliar modelos de classificação. Ela categoriza as previsões de um modelo em verdadeiros positivos (VP), falsos positivos(FP), falsos negativos(FN) e verdadeiros negativos(VN).
-Obs.: Devido ao target ter quatro classes, será preciso implementar uma matriz de confusão para cada classe. 
 
 ### K-NN Vizinhos: 
 
